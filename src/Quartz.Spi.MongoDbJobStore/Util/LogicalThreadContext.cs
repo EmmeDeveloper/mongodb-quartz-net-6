@@ -30,6 +30,11 @@ using System.Security;
 using System.Threading;
 
 // Workaround for getting off remoting removed in NET Core: http://www.cazzulino.com/callcontext-netstandard-netcore.html
+#if NET452
+using System.Runtime.Remoting.Messaging;
+#elif NET462 || NETSTANDARD2_0
+using System.Threading;
+#endif
 
 namespace Quartz.Util
 {
