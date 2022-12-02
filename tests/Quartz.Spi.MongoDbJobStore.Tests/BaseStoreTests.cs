@@ -20,7 +20,7 @@ namespace Quartz.Spi.MongoDbJobStore.Tests
                 [StdSchedulerFactory.PropertySchedulerInstanceId] = $"{Environment.MachineName}-{Guid.NewGuid()}",
                 [StdSchedulerFactory.PropertyJobStoreType] = typeof(MongoDbJobStore).AssemblyQualifiedName,
                 [$"{StdSchedulerFactory.PropertyJobStorePrefix}.{StdSchedulerFactory.PropertyDataSourceConnectionString}"]
-                    = "mongodb://127.0.0.1:27017",
+                    = "mongodb://127.0.0.1:27017/test",
                 [$"{StdSchedulerFactory.PropertyJobStorePrefix}.collectionPrefix"] = "prefix"
             };
 

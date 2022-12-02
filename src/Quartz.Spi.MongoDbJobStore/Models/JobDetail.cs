@@ -43,14 +43,10 @@ namespace Quartz.Spi.MongoDbJobStore.Models
         public IJobDetail GetJobDetail()
         {
             // The missing properties are figured out at runtime from the job type attributes
-            return new JobDetailImpl()
+            return new JobDetailImpl(Id.Name, Id.Group, JobType, Durable, RequestsRecovery )
             {
-                Key = new JobKey(Id.Name, Id.Group),
                 Description = Description,
-                JobType = JobType,
                 JobDataMap = JobDataMap,
-                Durable = Durable,
-                RequestsRecovery = RequestsRecovery
             };
         }
     }
